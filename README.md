@@ -1,6 +1,3 @@
-Here’s a short description you can use for your GitHub repository:
-
----
 
 # Ecommerce App Using Provider
 
