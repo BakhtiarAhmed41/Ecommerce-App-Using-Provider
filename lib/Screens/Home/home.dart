@@ -10,7 +10,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-    int currentSLide = 0;
+  int currentSLide = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,12 +96,18 @@ class _HomeState extends State<Home> {
                   ],
                 ),
               ),
-              const SizedBox(height: 20,),
-               ImageSlider(currentSlide: currentSLide, onChange: (value){
-                 setState(() {
-                   currentSLide = value;
-                 });
-               } ,),
+              const SizedBox(height: 30),
+              ImageSlider(
+                currentSlide: currentSLide,
+                onChange: (value) {
+                  setState(() {
+                    currentSLide = value;
+                  });
+                },
+              ),
+              const SizedBox(height: 30),
+
+
             ],
           ),
         ));
