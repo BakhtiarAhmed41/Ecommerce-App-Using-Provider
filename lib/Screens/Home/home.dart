@@ -2,6 +2,8 @@ import 'package:ecommerce_app/Screens/Home/Widgets/image_slider.dart';
 import 'package:ecommerce_app/constants.dart';
 import 'package:flutter/material.dart';
 
+import 'Widgets/categories.dart';
+
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -106,6 +108,7 @@ class _HomeState extends State<Home> {
                 },
               ),
               const SizedBox(height: 30),
+              const Categories(),
 
 
             ],
