@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/Screens/Detail/details_screen.dart';
 import 'package:ecommerce_app/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -11,8 +12,13 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
-      child: Stack(
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => DetailsScreen(product: product)));
+      },
+       child: Stack(
         children: [
           SingleChildScrollView(
             child: Container(
@@ -54,31 +60,31 @@ class ProductCard extends StatelessWidget {
                     height: 10,
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                    Text(
-                      "\$${product.price}",
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 17,
-                      ), // TextStyle
-                    ),
-                    // Text
+                        Text(
+                          "\$${product.price}",
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 17,
+                          ), // TextStyle
+                        ),
+                        // Text
 
-                    Row(
-                      children: List.generate(
-                          product.colors.length,
-                          (index) => Container(
-                                width: 18,
-                                height: 18,
-                                margin: const EdgeInsets.only(right: 4),
-                                decoration: BoxDecoration(
-                                  color: product.colors[index],
-                                  shape: BoxShape.circle,
-                                ),
-                              )),
-                    )
-                  ])
+                        Row(
+                          children: List.generate(
+                              product.colors.length,
+                              (index) => Container(
+                                    width: 18,
+                                    height: 18,
+                                    margin: const EdgeInsets.only(right: 4),
+                                    decoration: BoxDecoration(
+                                      color: product.colors[index],
+                                      shape: BoxShape.circle,
+                                    ),
+                                  )),
+                        )
+                      ])
                 ],
               ),
             ),

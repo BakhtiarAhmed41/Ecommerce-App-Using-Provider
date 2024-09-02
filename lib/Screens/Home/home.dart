@@ -135,6 +135,7 @@ class _HomeState extends State<Home> {
                       crossAxisCount: 2,
                       childAspectRatio: 0.78,
                       crossAxisSpacing: 20,
+                      mainAxisSpacing: 5
                       ),
                   itemCount: products.length,
                   itemBuilder: (context, index) {
