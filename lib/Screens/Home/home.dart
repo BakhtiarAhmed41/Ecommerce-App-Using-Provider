@@ -1,8 +1,9 @@
 import 'package:ecommerce_app/Screens/Home/Widgets/image_slider.dart';
+import 'package:ecommerce_app/Screens/Home/Widgets/product_card.dart';
 import 'package:ecommerce_app/constants.dart';
 import 'package:flutter/material.dart';
-
 import 'Widgets/categories.dart';
+import 'package:ecommerce_app/Models/product_model.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -122,9 +123,25 @@ class _HomeState extends State<Home> {
                         fontSize: 20,
                       ),
                     ),
-
-                    Text("See all", )
+                    Text(
+                      "See all",
+                    )
                   ],
+                ),
+                GridView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      childAspectRatio: 0.78,
+                      crossAxisSpacing: 20,
+                      ),
+                  itemCount: products.length,
+                  itemBuilder: (context, index) {
+                    return ProductCard(
+                      product: products[index],
+                    );
+                  },
                 )
               ],
             ),
